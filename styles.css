@@ -1,12 +1,16 @@
-:root{
+:root {
   --bg: rgb(243, 243, 245);
   --accent: rgb(201, 25, 25);
   --text: #111;
   --white: #fff;
+  --gray: #4a4a4a; /* Um cinza mais escuro para o texto */
 }
 
+/* Importando as fontes do Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Lato:wght@400;700&display=swap');
+
 /* RESET ÚNICO */
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -17,18 +21,25 @@ html, body {
 }
 
 /* BASE */
-body{
-  font-family: Arial, Helvetica, sans-serif;
+body {
+  font-family: 'Lato', sans-serif; /* Fonte para o corpo do texto */
   background-color: var(--bg);
-  color: var(--text);
-  line-height: 1.6;
+  color: var(--gray); /* Usando o cinza escuro para o texto */
+  line-height: 1.7; /* Mais espaçamento entre linhas para melhor leitura */
   display: flex;
   flex-direction: column;
   min-height: 100vh;
 }
 
+/* Títulos */
+h1, h2, h3 {
+  font-family: 'Montserrat', sans-serif; /* Fonte para os títulos */
+  color: var(--text);
+  font-weight: 700;
+}
+
 /* ---------- HEADER ---------- */
-header{
+header {
   background-color: var(--accent);
   padding: 12px 0;
   position: sticky;
@@ -54,32 +65,13 @@ header nav a {
   letter-spacing: 1px;
   padding: 6px 4px;
   display: inline-block;
-  transition: color 0,3s ease;
+  transition: color 0.3s ease;
 }
 
 .menu, header nav {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
-}
-
-.menu ul {
-  list-style: none;
-  display: flex;
-  justify-content: center;
-  gap: 30px;
-  align-items: center;
-}
-
-.menu a,
-header nav a {
-  color: var(--white);
-  text-decoration: none;
-  font-weight: 700;
-  font-size: 14px;
-  letter-spacing: 1px;
-  padding: 6px 4px;
-  display: inline-block;
 }
 
 .menu a:hover,
@@ -92,7 +84,7 @@ header nav a:hover {
 .menu a.active,
 header nav a.active {
   text-decoration: none;
-  border-bottom: 3px solid rgba(255,255,255,0.15);
+  border-bottom: 3px solid rgba(255, 255, 255, 0.15);
   padding-bottom: 3px;
 }
 
@@ -106,26 +98,11 @@ main {
   box-sizing: border-box;
 }
 
-/* PORTFOLIO (index) */
-.portfolio {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 20px;
-}
-
-.portfolio img{
-  max-width: 100%;
-  height: auto;
-  display: block;
-  border: none;
-  outline: none;
-}
-
 /* BIOGRAFIA - layout com imagem à esquerda e texto à direita */
 .bio-container {
   display: flex;
-  align-items: flex-start;
+  flex-wrap: wrap; /* Permite quebrar a linha em telas menores */
+  align-items: center; /* Alinha verticalmente */
   gap: 40px;
   max-width: 1200px;
   margin: 40px auto;
@@ -133,41 +110,56 @@ main {
   box-sizing: border-box;
 }
 
-.bio-imagem img{
-  max-width: 250px;
+.bio-imagem {
+  flex-basis: 250px; /* Define uma base para a imagem, tornando-a mais responsiva */
+  flex-grow: 0;
+  flex-shrink: 0;
+  text-align: center;
+}
+
+.bio-imagem img {
   width: 100%;
   height: auto;
   border-radius: 5px;
   display: block;
 }
 
-.bio-texto{
+.bio-texto {
   flex: 1;
   text-align: justify;
-  font-size: 15px;
+  font-size: 16px; /* Aumentado para melhor leitura */
+  line-height: 1.7;
 }
 
-.biografia h1{
-  font-size: 26px;
+.biografia h1 {
+  font-size: 2.2rem;
   color: var(--accent);
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 2rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px dotted var(--accent); /* Efeito pós-moderno */
+  display: inline-block;
 }
 
-/* pequenas imagens de perfil dentro da seção biografia */
-.biografia img{
-  display: block;
-  margin: 0 auto 20px;
-  max-width: 180px;
-  border-radius: 50%;
+/* Centraliza o h1 da biografia */
+.bio-texto h1 {
+  width: 100%;
+  text-align: center;
 }
 
-/* ---------- FOOTER ---------- */
-footer{
+/* Páragrafos da biografia */
+.bio-texto p {
+  margin-bottom: 1.5rem;
+  text-align: justify;
+}
+
+/* Rodapé */
+footer {
   background-color: var(--accent);
   color: var(--white);
   padding: 40px 20px;
   font-size: 14px;
+  margin-top: auto; /* Garante que o rodapé permaneça na parte inferior */
 }
 
 .footer-container {
@@ -213,7 +205,6 @@ footer{
   text-decoration: none;
 }
 
-/* ícones sociais centralizados */
 .social-icons {
   display: flex;
   justify-content: center;
@@ -230,44 +221,28 @@ footer{
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  transition: transform .12s ease, background-color .12s ease;
+  transition: transform 0.12s ease, background-color 0.12s ease;
 }
 
 .social-icons a:hover {
   transform: translateY(-3px);
-  background: rgba(255,255,255,0.06);
-}
-
-/* linha e texto inferior do footer */
-.footer-bottom {
-  width: 100%;
-  max-width: 900px;
-  margin-top: 28px;
-  padding-top: 16px;
-  border-top: 1px solid rgba(255,255,255,0.15);
-  font-size: 13px;
-  text-align: center;
-}
-
-/* utilitários */
-.center {
-  text-align: center;
+  background: rgba(255, 255, 255, 0.06);
 }
 
 /* ---------- RESPONSIVIDADE ---------- */
-@media (max-width: 900px){
-  .bio-container{
+@media (max-width: 900px) {
+  .bio-container {
     flex-direction: column;
     align-items: center;
     text-align: justify;
     margin: 20px auto;
   }
 
-  .bio-imagem img{
+  .bio-imagem img {
     max-width: 200px;
   }
 
-  .menu ul{
+  .menu ul {
     gap: 14px;
   }
 
@@ -278,7 +253,7 @@ footer{
   }
 }
 
-@media (max-width: 480px){
+@media (max-width: 480px) {
   .menu ul {
     gap: 8px;
     font-size: 13px;
@@ -293,221 +268,111 @@ footer{
   }
 }
 
-/* ---------- TRABALHOS / CARROSSEL ---------- */
-.trabalhos {
-  max-width: 1200px;
-  margin: 40px auto;
-  padding: 0 20px;
-  text-align: center;
+/* --- SEÇÃO TRABALHOS (GALERIA) --- */
+.trabalhos-section {
+    padding: 3rem 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
 }
 
-.trabalhos h1 {
-  font-size: 28px;
-  margin-bottom: 30px;
-  color: var(--accent);
+.works-grid {
+    display: grid;
+    /* Configura o grid para ter colunas que se ajustam */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 2rem;
 }
 
-/* estrutura do carrossel */
-.carousel {
-  position: relative;
-  overflow: hidden;
+.work-card {
+    background-color: var(--white);
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
 }
 
-.carousel-track-container {
-  overflow: hidden;
+.work-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
 }
 
-.carousel-track {
-  display: flex;
-  transition: transform 0.5s ease;
-}
-
-.carousel-slide {
-  min-width: 100%;
-  list-style: none;
-}
-
-/* layout interno: imagem + texto */
-.work-item {
-  display: flex;
-  gap: 30px;
-  align-items: center;
-  justify-content: center;
-  padding: 20px;
-}
-
-.work-img img {
-  max-width: 400px;
-  border-radius: 8px;
-  
+.work-card img {
+    width: 100%;
+    height: auto; /* Altera a altura para ser automática */
+    object-fit: contain; /* Ajusta a imagem inteira dentro do contêiner */
+    border-radius: 6px;
+    margin-bottom: 1.2rem;
 }
 
 .work-info {
-  max-width: 500px;
-  text-align: left;
+    flex-grow: 1; /* Permite que o conteúdo ocupe o espaço restante */
 }
 
-.work-info h2 {
-  font-size: 22px;
-  margin-bottom: 15px;
-  color: var(--accent);
+.work-info h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    color: var(--accent); /* Cor de destaque para o título */
 }
 
 .work-info p {
-  font-size: 15px;
-  line-height: 1.6;
+    font-size: 0.95rem;
+    color: var(--gray);
 }
 
-/* botões de navegação */
-.carousel button {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: rgba(201,25,25,0.85);
-  border: none;
-  color: #fff;
-  font-size: 22px;
-  cursor: pointer;
-  padding: 6px 14px;
-  border-radius: 50%;
-  z-index: 10;
+/* ---------- SEÇÃO CONSULTORIA EM PROJETOS CULTURAIS ---------- */
+.consultoria-projetos-culturais {
+  background-color: var(--bg); /* Fundo levemente cinza */
+  padding: 60px 20px; /* Mais espaçamento para destacar a seção */
+  text-align: center; /* Centraliza todo o conteúdo da seção */
 }
 
-.carousel button:hover {
-  background: rgba(201,25,25,1);
-}
-
-.carousel .prev {
-  left: 10px;
-}
-
-.carousel .next {
-  right: 10px;
-}
-
-/* responsivo */
-@media (max-width: 768px) {
-  .work-item {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .work-info {
-    text-align: center;
-  }
-
-  .work-img img {
-    max-width: 90%;
-  }
-}
-
-/* ---------- SEÇÃO APRENDIZADO ---------- */
-.aprendizado-container {
+.consultoria-container {
+  display: flex;
+  align-items: center; /* Alinha os itens verticalmente ao centro */
+  justify-content: center; /* Centraliza o conteúdo na linha */
   max-width: 1200px;
-  margin: 40px auto;
-  padding: 20px;
-  text-align: center;
+  margin: 0 auto;
+  gap: 40px; /* Espaço entre a imagem e o texto */
 }
 
-.aprendizado-container h1 {
-  font-size: 28px;
-  margin-bottom: 30px;
-  color: var(--accent);
+.consultoria-imagem img {
+  max-width: 250px; /* Define um tamanho máximo para a imagem */
+  width: 100%; /* Garante que a imagem ocupe todo o espaço disponível */
+  height: auto;
+  border-radius: 8px; /* Cantos levemente arredondados */
 }
 
-.aprendizado-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Cria colunas responsivas */
-  gap: 30px;
-  text-align: left;
+.consultoria-texto {
+  flex: 1; /* Permite que o texto ocupe o espaço restante */
+  max-width: 600px; /* Limita a largura do texto para melhor legibilidade */
+  text-align: left; /* Alinha o texto à esquerda */
 }
 
-.aprendizado-card {
-  background-color: var(--white);
-  border-radius: 8px;
-  padding: 25px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between; /* Para alinhar os itens */
-  height: 100%; /* Garante que todos os cards tenham a mesma altura */
+.consultoria-texto h1 {
+  font-size: 32px; /* Tamanho maior para o título principal */
+  color: var(--accent); /* Usa a cor de acento definida */
+  margin-bottom: 20px;
 }
 
-.aprendizado-card .card-header {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-bottom: 15px;
-  color: var(--accent);
-}
-
-.aprendizado-card .card-header i {
-  font-size: 22px;
-}
-
-.aprendizado-card .card-header h3 {
-  font-size: 18px;
+.consultoria-texto h2 {
+  font-size: 20px; /* Tamanho para subtítulo */
+  color: var(--text); /* Usa a cor de texto principal */
   font-weight: bold;
-  margin: 0;
-}
-
-.aprendizado-card ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  flex-grow: 1; /* Permite que a lista ocupe o espaço disponível */
-}
-
-.aprendizado-card ul li {
+  margin-top: 25px;
   margin-bottom: 10px;
-  font-size: 14px;
-  line-height: 1.6;
-  padding-left: 20px; /* Espaço para um possível ícone */
-  position: relative;
 }
 
-/* Estilizando os ícones de check (você pode usar Font Awesome ou SVGs) */
-.aprendizado-card ul li::before {
-  content: '\f00c'; /* Código do ícone de check do Font Awesome */
-  font-family: 'Font Awesome 6 Free'; /* Certifique-se de que Font Awesome está linkado */
-  font-weight: 900;
-  position: absolute;
-  left: 0;
-  color: var(--accent);
+.consultoria-texto p {
+  font-size: 16px; /* Tamanho de fonte um pouco maior */
+  margin-bottom: 15px;
+  line-height: 1.7; /* Espaçamento entre linhas para facilitar a leitura */
 }
 
-/* ---------- RESPONSIVIDADE ADICIONAL ---------- */
-@media (max-width: 900px) {
-  .aprendizado-container h1 {
-    font-size: 24px;
-  }
-
-  .aprendizado-grid {
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-  }
-
-  .aprendizado-card {
-    padding: 20px;
-  }
-}
-
-@media (max-width: 480px) {
-  .aprendizado-container h1 {
-    font-size: 22px;
-    margin-bottom: 20px;
-  }
-
-  .aprendizado-grid {
-    grid-template-columns: 1fr; /* Um card por linha em telas muito pequenas */
-  }
-
-  .aprendizado-card ul li {
-    font-size: 13px;
-  }
-}
-
-/* CONSULTORIAS - CARDS SECTION */
+/* ---------- SEÇÃO DE BENEFÍCIOS (CARDS) ---------- */
 .consultorias-container {
     padding: 20px;
     text-align: center;
@@ -550,6 +415,9 @@ footer{
     flex: 1 1 280px;
     max-width: 350px;
     text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .card:hover {
@@ -569,11 +437,13 @@ footer{
 .card h3 span {
     margin-right: 10px;
     font-size: 1.5rem;
+    color: var(--accent); /* Cor de acento para os ícones */
 }
 
 .card ul {
     list-style: none;
     padding: 0;
+    flex-grow: 1; /* Garante que a lista ocupe o espaço restante */
 }
 
 .card ul li {
@@ -581,120 +451,16 @@ footer{
     color: #333;
     margin-bottom: 10px;
     display: flex;
-    align-items: flex-start;
+    align-items: flex-start; /* Alinha o ícone e o texto no topo */
 }
 
-.card ul li span {
-    color: rgb(7, 185, 41);
+.card ul li span { /* Estilo para o ícone de check */
+    color: var(--accent); /* Mantém a cor de acento para os checks */
     margin-right: 8px;
     font-size: 1.1rem;
+    flex-shrink: 0; /* Evita que o ícone encolha */
 }
 
-@media (max-width: 768px) {
-    .cards-grid {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .card {
-        max-width: 90%;
-    }
-}
-
-/* ---------- SEÇÃO CONSULTORIA EM PROJETOS CULTURAIS ---------- */
-.consultoria-projetos-culturais {
-  background-color: var(--bg); /* Fundo levemente cinza, como na imagem de referência */
-  padding: 60px 20px; /* Mais espaçamento para destacar a seção */
-}
-
-.consultoria-container {
-  display: flex;
-  align-items: center; /* Alinha os itens verticalmente ao centro */
-  justify-content: center; /* Centraliza o conteúdo na linha */
-  max-width: 1200px;
-  margin: 0 auto;
-  gap: 40px; /* Espaço entre a imagem e o texto */
-}
-
-.consultoria-imagem img {
-  max-width: 250px; /* Define um tamanho máximo para a imagem */
-  width: 100%; /* Garante que a imagem ocupe todo o espaço disponível */
-  height: auto;
-  border-radius: 8px; /* Cantos levemente arredondados, se desejar */
-}
-
-.consultoria-texto {
-  flex: 1; /* Permite que o texto ocupe o espaço restante */
-  max-width: 600px; /* Limita a largura do texto para melhor legibilidade */
-}
-
-.consultoria-texto h1 {
-  font-size: 32px; /* Tamanho maior para o título principal */
-  color: var(--accent); /* Usa a cor de acento definida */
-  margin-bottom: 20px;
-  text-align: left; /* Alinha o título à esquerda */
-}
-
-.consultoria-texto p {
-  font-size: 16px; /* Tamanho de fonte um pouco maior */
-  margin-bottom: 15px;
-  line-height: 1.7; /* Espaçamento entre linhas para facilitar a leitura */
-  text-align: left; /* Alinha o texto à esquerda */
-}
-
-.consultoria-texto h2 {
-  font-size: 18px;
-  color: var(--text); /* Usa a cor de texto principal */
-  font-weight: bold;
-  margin-top: 25px;
-  margin-bottom: 10px;
-  text-align: left;
-}
-
-/* --- Ajustes de Responsividade Adicionais --- */
-@media (max-width: 900px) {
-  .consultoria-container {
-    flex-direction: column; /* Empilha os elementos verticalmente em telas menores */
-    text-align: center; /* Centraliza o texto quando empilhado */
-  }
-
-  .consultoria-imagem img {
-    max-width: 200px; /* Ajusta o tamanho da imagem */
-    margin-bottom: 20px; /* Adiciona um espaço abaixo da imagem */
-  }
-
-  .consultoria-texto {
-    max-width: 100%; /* Permite que o texto ocupe toda a largura disponível */
-  }
-
-  .consultoria-texto h1,
-  .consultoria-texto p,
-  .consultoria-texto h2 {
-    text-align: center; /* Centraliza todo o texto */
-  }
-}
-
-@media (max-width: 480px) {
-  .consultoria-projetos-culturais {
-    padding: 40px 15px; /* Reduz o padding em telas muito pequenas */
-  }
-
-  .consultoria-imagem img {
-    max-width: 150px; /* Diminui ainda mais a imagem */
-  }
-
-  .consultoria-texto h1 {
-    font-size: 26px; /* Ajusta o título */
-  }
-
-  .consultoria-texto h2 {
-    font-size: 16px; /* Ajusta o subtítulo */
-  }
-
-  .consultoria-texto p {
-    font-size: 14px; /* Ajusta o texto geral */
-  }
-}
 /* ---------- SEÇÃO CONSULTORIA EM PROJETOS CULTURAIS - LAYOUT CENTRALIZADO ---------- */
 .consultoria-projetos-culturais-centralizada {
   background-color: var(--bg); /* Fundo levemente cinza */
@@ -740,29 +506,82 @@ footer{
   margin-top: 25px;
 }
 
-/* --- Ajustes de Responsividade Adicionais --- */
-@media (max-width: 768px) {
-  .consultoria-projetos-culturais-centralizada {
-    padding: 40px 15px;
+.texto-centralizado ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 15px;
+}
+
+.texto-centralizado ul li {
+  font-size: 15px;
+  line-height: 1.7;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: flex-start; /* Alinha o ícone e o texto no topo */
+}
+
+.texto-centralizado ul li span { /* Estilo para o ícone de check */
+    color: var(--accent); /* Mantém a cor de acento para os checks */
+    margin-right: 8px;
+    font-size: 1.1rem;
+    flex-shrink: 0; /* Evita que o ícone encolha */
+}
+
+
+/* ---------- RESPONSIVIDADE ---------- */
+@media (max-width: 900px) {
+  .consultoria-container {
+    flex-direction: column; /* Empilha os elementos verticalmente em telas menores */
+    text-align: center; /* Centraliza o texto quando empilhado */
   }
 
-  .titulo-centralizado {
-    font-size: 28px;
+  .consultoria-imagem img {
+    max-width: 200px; /* Ajusta o tamanho da imagem */
+    margin-bottom: 20px; /* Adiciona um espaço abaixo da imagem */
   }
 
-  .imagem-centralizada img {
-    max-width: 180px;
+  .consultoria-texto {
+    max-width: 100%; /* Permite que o texto ocupe toda a largura disponível */
   }
 
-  .texto-centralizado p,
-  .texto-centralizado h2 {
-    font-size: 15px;
+  .consultoria-texto h1,
+  .consultoria-texto p,
+  .consultoria-texto h2 {
+    text-align: center; /* Centraliza todo o texto */
+  }
+
+  /* Ajustes para a seção centralizada também */
+  .consultoria-content-centralizado {
+      max-width: 100%;
+  }
+  .texto-centralizado ul li {
+      justify-content: center;
   }
 }
 
 @media (max-width: 480px) {
+  .consultoria-projetos-culturais {
+    padding: 40px 15px; /* Reduz o padding em telas muito pequenas */
+  }
+
+  .consultoria-imagem img {
+    max-width: 150px; /* Diminui ainda mais a imagem */
+  }
+
+  .consultoria-texto h1 {
+    font-size: 26px; /* Ajusta o título */
+  }
+
+  .consultoria-texto h2 {
+    font-size: 16px; /* Ajusta o subtítulo */
+  }
+
+  .consultoria-texto p {
+    font-size: 14px; /* Ajusta o texto geral */
+  }
+
   .titulo-centralizado {
-    font-size: 24px;
+    font-size: 28px;
   }
 
   .imagem-centralizada img {
@@ -771,6 +590,10 @@ footer{
 
   .texto-centralizado p,
   .texto-centralizado h2 {
-    font-size: 14px;
+    font-size: 15px;
+  }
+
+  .texto-centralizado ul li {
+      font-size: 14px;
   }
 }
