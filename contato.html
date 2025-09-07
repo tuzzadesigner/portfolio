@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contato - Matheus Xavier</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+  <header>
+    <nav>
+      <ul class="menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="biografia.html">Biografia</a></li>
+        <li><a href="trabalhos.html">Trabalhos</a></li>
+        <li><a href="consultorias.html">Consultorias</a></li>
+        <li><a href="contato.html" class="active">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="contato-page">
+    <section class="contato-section">
+      <div class="contato-header">
+        <h1>Entre em Contato</h1>
+        <p>Tem um projeto em mente ou gostaria de saber mais sobre meus serviços? Preencha o formulário abaixo e entrarei em contato o mais breve possível.</p>
+      </div>
+
+      <form id="contact-form">
+        <div class="form-group">
+          <label for="nome">Nome:</label>
+          <input type="text" id="nome" name="nome" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+          <label for="assunto">Assunto:</label>
+          <input type="text" id="assunto" name="assunto" required>
+        </div>
+        <div class="form-group">
+          <label for="mensagem">Mensagem:</label>
+          <textarea id="mensagem" name="mensagem" rows="6" required></textarea>
+        </div>
+        <button type="submit" class="cta-button">Enviar Mensagem</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-container">
+      <div class="footer-col">
+        <h3>Contato</h3>
+        <p>Email: tuzzadesigner@gmail.com</p>
+        <p>Tel: (73) 98829-4140</p>
+        <p>Jequié - BA</p>
+      </div>
+      <div class="footer-col">
+        <h3>Conecte-se</h3>
+        <div class="social-icons">
+          <a href="https://www.instagram.com/matheusxavier001/" target="_blank" rel="noopener" aria-label="Instagram">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="https://www.facebook.com/profile.php?id=100005953217330" target="_blank" rel="noopener" aria-label="Facebook">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/matheus-xavier-81b00b21b/" target="_blank" rel="noopener" aria-label="LinkedIn">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
