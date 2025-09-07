@@ -597,3 +597,18 @@ footer {
       font-size: 14px;
   }
 }
+/* Estilo para a imagem da página inicial */
+.portfolio img {
+    max-width: 100%; /* Garante que a imagem não ultrapasse a largura do seu contêiner */
+    height: auto; /* Mantém a proporção original da imagem */
+    display: block; /* Remove o espaço extra abaixo da imagem */
+    margin: 0 auto; /* Centraliza a imagem horizontalmente */
+}
+
+/* Centraliza o contêiner da imagem na seção portfolio */
+.portfolio {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
