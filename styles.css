@@ -940,3 +940,8 @@ footer {
         align-items: center;
     }
 }
+.menu ul {
+  flex-wrap: wrap;     /* permite quebra em mais de uma linha */
+}
+
+
