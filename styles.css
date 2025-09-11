@@ -940,8 +940,24 @@ footer {
         align-items: center;
     }
 }
-.menu ul {
-  flex-wrap: wrap;     /* permite quebra em mais de uma linha */
+
+@media (max-width: 600px) {
+  /* Pega tanto quando .menu está no nav quanto quando está no ul */
+  nav.menu ul,
+  .menu ul {
+    flex-wrap: wrap;      /* permite quebra em várias linhas */
+    justify-content: center; /* centraliza os itens quebrados */
+    gap: 12px;
+  }
+
+  .menu a,
+  nav.menu a,
+  header nav a {
+    font-size: 15px;
+    padding: 8px;
+  }
 }
+
+
 
 
