@@ -12,11 +12,15 @@
   <header>
     <nav>
       <ul class="menu">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="biografia.html">Biografia</a></li>
-        <li><a href="trabalhos.html" class="active">Trabalhos</a></li>
-        <li><a href="consultorias.html">Consultorias</a></li>
+        <li><a href="index.html">HOME</a></li>
+        <li><a href="biografia.html">BIOGRAFIA</a></li>
+        <li><a href="trabalhos.html" class="active">TRABALHOS</a></li>
+        <li><a href="consultorias.html">CONSULTORIAS</a></li>
+        <li><a href="contato.html">CONTATO</a></li>
       </ul>
+      <button class="menu-toggle" aria-label="Menu">
+        <i class="fas fa-bars"></i>
+      </button>
     </nav>
   </header>
 
@@ -150,6 +154,14 @@
       </div>
     </div>
   </footer>
+  <script>
+  const menuToggle = document.querySelector('.menu-toggle');
+  const menu = document.querySelector('.menu');
+
+  menuToggle.addEventListener('click', () => {
+    menu.classList.toggle('active');
+  });
+</script>
 
   <script src="trabalho.js"></script>
 </body>
