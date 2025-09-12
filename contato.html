@@ -11,42 +11,65 @@
 
   <header>
     <nav>
-      <ul class="menu">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="biografia.html">Biografia</a></li>
-        <li><a href="trabalhos.html">Trabalhos</a></li>
-        <li><a href="consultorias.html">Consultorias</a></li>
-        <li><a href="contato.html" class="active">Contato</a></li>
+       <ul class="menu">
+        <li><a href="index.html">HOME</a></li>
+        <li><a href="biografia.html">BIOGRAFIA</a></li>
+        <li><a href="trabalhos.html">TRABALHOS</a></li>
+        <li><a href="consultorias.html">CONSULTORIAS</a></li>
+        <li><a href="contato.html" class="active">CONTATO</a></li>
       </ul>
+      <button class="menu-toggle" aria-label="Menu">
+        <i class="fas fa-bars"></i>
+      </button>
     </nav>
   </header>
 
   <main class="contato-page">
     <section class="contato-section">
-      <div class="contato-header">
-        <h1>Entre em Contato</h1>
-        <p>Tem um projeto em mente ou gostaria de saber mais sobre meus serviços? Preencha o formulário abaixo e entrarei em contato o mais breve possível.</p>
+      <div class="intro-box contato-wrapper">
+        <div class="contato-header">
+          <h1>Entre em Contato</h1>
+          <p>Tem um projeto em mente ou gostaria de saber mais sobre meus serviços? Preencha o formulário abaixo e entrarei em contato o mais breve possível.</p>
+        </div>
+
+       <form action="https://formspree.io/f/xblabdjl" method="POST">
+    <div class="form-group">
+      <label for="nome">Nome:</label>
+      <input type="text" id="nome" name="nome" required>
+    </div>
+
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+    </div>
+
+    <div class="form-group">
+      <label for="mensagem">Mensagem:</label>
+      <textarea id="mensagem" name="mensagem" rows="6" required></textarea>
+    </div>
+    <button type="submit" class="cta-button">Enviar Mensagem</button>
+</form>
       </div>
 
-      <form id="contact-form">
-        <div class="form-group">
-          <label for="nome">Nome:</label>
-          <input type="text" id="nome" name="nome" required>
+      <div class="contato-info-section">
+        <div class="intro-box">
+          <h3>Outras Formas de Contato</h3>
+          <p>Email: <a href="mailto:tuzzadesigner@gmail.com">tuzzadesigner@gmail.com</a></p>
+          <p>Telefone: (73) 98829-4140</p>
+          <p>Localização: Jequié - BA</p>
+          <div class="social-icons">
+            <a href="https://www.instagram.com/matheusxavier001/" target="_blank" rel="noopener" aria-label="Instagram">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://www.facebook.com/profile.php?id=100005953217330" target="_blank" rel="noopener" aria-label="Facebook">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/matheus-xavier-81b00b21b/" target="_blank" rel="noopener" aria-label="LinkedIn">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+          </div>
         </div>
-        <div class="form-group">
-          <label for="email">Email:</label>
-          <input type="email" id="email" name="email" required>
-        </div>
-        <div class="form-group">
-          <label for="assunto">Assunto:</label>
-          <input type="text" id="assunto" name="assunto" required>
-        </div>
-        <div class="form-group">
-          <label for="mensagem">Mensagem:</label>
-          <textarea id="mensagem" name="mensagem" rows="6" required></textarea>
-        </div>
-        <button type="submit" class="cta-button">Enviar Mensagem</button>
-      </form>
+      </div>
     </section>
   </main>
 
@@ -74,5 +97,13 @@
       </div>
     </div>
   </footer>
+  <script>
+  const menuToggle = document.querySelector('.menu-toggle');
+  const menu = document.querySelector('.menu');
+
+  menuToggle.addEventListener('click', () => {
+    menu.classList.toggle('active');
+  });
+</script>
 </body>
 </html>
