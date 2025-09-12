@@ -3,13 +3,11 @@
   --accent: rgb(201, 25, 25);
   --text: #111;
   --white: #fff;
-  --gray: #4a4a4a; /* Um cinza mais escuro para o texto */
+  --gray: #4a4a4a;
 }
 
-/* Importando as fontes do Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Lato:wght@400;700&display=swap');
 
-/* RESET ÚNICO */
 * {
   margin: 0;
   padding: 0;
@@ -20,20 +18,18 @@ html, body {
   height: 100%;
 }
 
-/* BASE */
 body {
-  font-family: 'Lato', sans-serif; /* Fonte para o corpo do texto */
+  font-family: 'Lato', sans-serif;
   background-color: var(--bg);
-  color: var(--gray); /* Usando o cinza escuro para o texto */
-  line-height: 1.7; /* Mais espaçamento entre linhas para melhor leitura */
+  color: var(--gray);
+  line-height: 1.7;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
 }
 
-/* Títulos */
 h1, h2, h3 {
-  font-family: 'Montserrat', sans-serif; /* Fonte para os títulos */
+  font-family: 'Montserrat', sans-serif;
   color: var(--text);
   font-weight: 700;
 }
@@ -47,45 +43,59 @@ header {
   z-index: 20;
 }
 
-.menu ul,
-header nav ul {
-  list-style: none;
+header nav {
   display: flex;
   justify-content: center;
-  gap: 30px;
   align-items: center;
-}
-
-.menu a,
-header nav a {
-  color: var(--white);
-  text-decoration: none;
-  font-weight: 700;
-  font-size: 14px;
-  letter-spacing: 1px;
-  padding: 6px 4px;
-  display: inline-block;
-  transition: color 0.3s ease;
-}
-
-.menu, header nav {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
 }
 
-.menu a:hover,
-header nav a:hover {
+.menu {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  justify-content: center;
+  width: 100%;
+}
+
+.menu a {
+  color: var(--white);
+  align-items: center;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 1px;
+  padding: 0 10px;
+  display: inline-block;
+  transition: color 0.3s ease;
+}
+
+.menu a:hover {
   color: #111;
   text-decoration: none;
   opacity: 0.95;
 }
 
-.menu a.active,
-header nav a.active {
+.menu a.active {
   text-decoration: none;
   border-bottom: 3px solid rgba(255, 255, 255, 0.15);
   padding-bottom: 3px;
+}
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 2.2rem;
+  color: var(--white);
+  cursor: pointer;
+  z-index: 30;
+  padding: 10px;
 }
 
 /* ---------- MAIN / PÁGINAS ---------- */
@@ -98,11 +108,77 @@ main {
   box-sizing: border-box;
 }
 
+.home-intro {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+}
+
+.intro-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  max-width: 1200px;
+  margin-top: 0;
+  text-align: center;
+}
+
+.portfolio-cover {
+  max-width: 800px;
+  width: 100%;
+  height: auto;
+}
+
+.intro-box {
+  background-color: var(--white);
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  text-align: center;
+}
+
+.intro-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+}
+
+.intro-box h1 {
+  font-size: 2.2rem;
+  color: var(--accent);
+  margin-bottom: 15px;
+}
+
+.intro-box p {
+  font-size: 16px;
+  line-height: 1.6;
+  max-width: 600px;
+  margin: 0 auto 20px;
+}
+
+.cta-button {
+  display: inline-block;
+  background-color: var(--accent);
+  color: var(--white);
+  padding: 12px 25px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 700;
+  transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: #a31a1a;
+}
+
 /* BIOGRAFIA - layout com imagem à esquerda e texto à direita */
 .bio-container {
   display: flex;
-  flex-wrap: wrap; /* Permite quebrar a linha em telas menores */
-  align-items: center; /* Alinha verticalmente */
+  flex-wrap: wrap;
+  align-items: center;
   gap: 40px;
   max-width: 1200px;
   margin: 40px auto;
@@ -111,7 +187,7 @@ main {
 }
 
 .bio-imagem {
-  flex-basis: 250px; /* Define uma base para a imagem, tornando-a mais responsiva */
+  flex-basis: 250px;
   flex-grow: 0;
   flex-shrink: 0;
   text-align: center;
@@ -127,7 +203,7 @@ main {
 .bio-texto {
   flex: 1;
   text-align: justify;
-  font-size: 16px; /* Aumentado para melhor leitura */
+  font-size: 16px;
   line-height: 1.7;
 }
 
@@ -137,17 +213,15 @@ main {
   text-align: center;
   margin-bottom: 2rem;
   padding-bottom: 0.5rem;
-  border-bottom: 2px dotted var(--accent); /* Efeito pós-moderno */
+  border-bottom: 2px dotted var(--accent);
   display: inline-block;
 }
 
-/* Centraliza o h1 da biografia */
 .bio-texto h1 {
   width: 100%;
   text-align: center;
 }
 
-/* Páragrafos da biografia */
 .bio-texto p {
   margin-bottom: 1.5rem;
   text-align: justify;
@@ -159,7 +233,7 @@ footer {
   color: var(--white);
   padding: 40px 20px;
   font-size: 14px;
-  margin-top: auto; /* Garante que o rodapé permaneça na parte inferior */
+  margin-top: auto;
 }
 
 .footer-container {
@@ -229,47 +303,7 @@ footer {
   background: rgba(255, 255, 255, 0.06);
 }
 
-/* ---------- RESPONSIVIDADE ---------- */
-@media (max-width: 900px) {
-  .bio-container {
-    flex-direction: column;
-    align-items: center;
-    text-align: justify;
-    margin: 20px auto;
-  }
-
-  .bio-imagem img {
-    max-width: 200px;
-  }
-
-  .menu ul {
-    gap: 14px;
-  }
-
-  .social-icons a {
-    width: 36px;
-    height: 36px;
-    font-size: 18px;
-  }
-}
-
-@media (max-width: 480px) {
-  .menu ul {
-    gap: 8px;
-    font-size: 13px;
-  }
-
-  .bio-texto {
-    font-size: 14px;
-  }
-
-  footer {
-    padding: 30px 12px;
-  }
-}
-
 /* --- SEÇÃO TRABALHOS (GALERIA) --- */
-/* Estilos para a galeria de imagens na página de trabalhos */
 .trabalhos-section {
     padding: 20px;
     text-align: center;
@@ -281,34 +315,32 @@ footer {
     margin-bottom: 40px;
 }
 
-/* Container principal da grade com 3 colunas */
 .works-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Cria colunas de 300px, com 3 por linha em telas grandes */
-    gap: 30px; /* Espaço entre as imagens */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
     padding: 0 20px;
     margin: 0 auto;
-    max-width: 1200px; /* Limita a largura do container para melhor visualização em monitores grandes */
+    max-width: 1200px;
 }
 
 .work-card {
     background-color: var(--white);
     border-radius: 8px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    overflow: hidden; /* Garante que a imagem não saia da borda do card */
+    overflow: hidden;
     display: flex;
     flex-direction: column;
     text-align: left;
-    transition: transform 0.3s ease; /* Efeito suave ao passar o mouse */
+    transition: transform 0.3s ease;
 }
 
 .work-card:hover {
-    transform: translateY(-5px); /* Efeito sutil de elevação */
+    transform: translateY(-5px);
 }
 
 .work-card img {
-    width: 100%; /* Imagem ocupando 100% da largura do card */
-    
+    width: 100%;
 }
 
 .work-info {
@@ -328,57 +360,111 @@ footer {
     font-size: 0.9rem;
     color: var(--gray);
     line-height: 1.4;
-    margin-top: auto; /* Empurra a descrição para o final, mantendo h3 alinhado */
+    margin-top: auto;
+}
+
+/* SEÇÃO VÍDEOS */
+.video-section {
+    padding: 20px;
+    margin-top: 40px;
+    text-align: center;
+}
+
+.video-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+.video-item {
+    background-color: var(--white);
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 100%;
+    max-width: 500px;
+    text-align: left;
+}
+
+.video-container {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.video-info {
+    padding: 20px;
+}
+
+.video-info h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.video-info p {
+    font-size: 1rem;
+    color: var(--gray);
 }
 
 
 /* ---------- SEÇÃO CONSULTORIA EM PROJETOS CULTURAIS ---------- */
 .consultoria-projetos-culturais {
-  background-color: var(--bg); /* Fundo levemente cinza */
-  padding: 60px 20px; /* Mais espaçamento para destacar a seção */
-  text-align: center; /* Centraliza todo o conteúdo da seção */
+  background-color: var(--bg);
+  padding: 60px 20px;
+  text-align: center;
 }
 
 .consultoria-container {
   display: flex;
-  align-items: center; /* Alinha os itens verticalmente ao centro */
-  justify-content: center; /* Centraliza o conteúdo na linha */
+  align-items: center;
+  justify-content: center;
   max-width: 1200px;
   margin: 0 auto;
-  gap: 40px; /* Espaço entre a imagem e o texto */
+  gap: 40px;
 }
 
 .consultoria-imagem img {
-  max-width: 250px; /* Define um tamanho máximo para a imagem */
-  width: 100%; /* Garante que a imagem ocupe todo o espaço disponível */
+  max-width: 250px;
+  width: 100%;
   height: auto;
-  border-radius: 8px; /* Cantos levemente arredondados */
+  border-radius: 8px;
 }
 
 .consultoria-texto {
-  flex: 1; /* Permite que o texto ocupe o espaço restante */
-  max-width: 600px; /* Limita a largura do texto para melhor legibilidade */
-  text-align: left; /* Alinha o texto à esquerda */
+  flex: 1;
+  max-width: 600px;
+  text-align: left;
 }
 
 .consultoria-texto h1 {
-  font-size: 32px; /* Tamanho maior para o título principal */
-  color: var(--accent); /* Usa a cor de acento definida */
+  font-size: 32px;
+  color: var(--accent);
   margin-bottom: 20px;
 }
 
 .consultoria-texto h2 {
-  font-size: 20px; /* Tamanho para subtítulo */
-  color: var(--text); /* Usa a cor de texto principal */
+  font-size: 20px;
+  color: var(--text);
   font-weight: bold;
   margin-top: 25px;
   margin-bottom: 10px;
 }
 
 .consultoria-texto p {
-  font-size: 16px; /* Tamanho de fonte um pouco maior */
+  font-size: 16px;
   margin-bottom: 15px;
-  line-height: 1.7; /* Espaçamento entre linhas para facilitar a leitura */
+  line-height: 1.7;
 }
 
 /* ---------- SEÇÃO DE BENEFÍCIOS (CARDS) ---------- */
@@ -446,13 +532,13 @@ footer {
 .card h3 span {
     margin-right: 10px;
     font-size: 1.5rem;
-    color: var(--accent); /* Cor de acento para os ícones */
+    color: var(--accent);
 }
 
 .card ul {
     list-style: none;
     padding: 0;
-    flex-grow: 1; /* Garante que a lista ocupe o espaço restante */
+    flex-grow: 1;
 }
 
 .card ul li {
@@ -460,50 +546,49 @@ footer {
     color: #333;
     margin-bottom: 10px;
     display: flex;
-    align-items: flex-start; /* Alinha o ícone e o texto no topo */
+    align-items: flex-start;
 }
 
-.card ul li span { /* Estilo para o ícone de check */
-    color: var(--accent); /* Mantém a cor de acento para os checks */
+.card ul li span {
+    color: var(--accent);
     margin-right: 8px;
     font-size: 1.1rem;
-    flex-shrink: 0; /* Evita que o ícone encolha */
+    flex-shrink: 0;
 }
 
 /* ---------- SEÇÃO CONSULTORIA EM PROJETOS CULTURAIS - LAYOUT CENTRALIZADO ---------- */
 .consultoria-projetos-culturais-centralizada {
-  background-color: var(--bg); /* Fundo levemente cinza */
+  background-color: var(--bg);
   padding: 60px 20px;
-  text-align: center; /* Centraliza todo o conteúdo da seção */
+  text-align: center;
 }
 
 .consultoria-content-centralizado {
-  max-width: 700px; /* Largura máxima para o conteúdo */
+  max-width: 700px;
   margin: 0 auto;
-  padding: 0 20px; /* Espaçamento nas laterais em telas maiores */
+  padding: 0 20px;
 }
 
 .titulo-centralizado {
   font-size: 32px;
   color: var(--accent);
-  margin-bottom: 25px; /* Espaço abaixo do título */
+  margin-bottom: 25px;
 }
 
 .imagem-centralizada {
-  margin-bottom: 25px; /* Espaço abaixo da imagem */
+  margin-bottom: 25px;
 }
 
 .imagem-centralizada img {
-  max-width: 200px; /* Tamanho da imagem */
+  max-width: 200px;
   width: 100%;
   height: auto;
-  border-radius: 8px; /* Cantos levemente arredondados */
-  display: inline-block; /* Garante que o margin-bottom funcione corretamente */
+  border-radius: 8px;
+  display: inline-block;
 }
 
-.texto-centralizado p,
-.texto-centralizado h2 {
-  text-align: center; /* Centraliza os parágrafos e o h2 */
+.texto-centralizado p, .texto-centralizado h2 {
+  text-align: center;
   font-size: 16px;
   line-height: 1.7;
   margin-bottom: 15px;
@@ -526,439 +611,440 @@ footer {
   line-height: 1.7;
   margin-bottom: 10px;
   display: flex;
-  align-items: flex-start; /* Alinha o ícone e o texto no topo */
+  align-items: flex-start;
 }
 
-.texto-centralizado ul li span { /* Estilo para o ícone de check */
-    color: var(--accent); /* Mantém a cor de acento para os checks */
-    margin-right: 8px;
-    font-size: 1.1rem;
-    flex-shrink: 0; /* Evita que o ícone encolha */
+.texto-centralizado ul li span {
+  color: var(--accent);
+  margin-right: 8px;
+  font-size: 1.1rem;
+  flex-shrink: 0;
 }
 
-
-/* ---------- RESPONSIVIDADE ---------- */
-@media (max-width: 900px) {
-  .consultoria-container {
-    flex-direction: column; /* Empilha os elementos verticalmente em telas menores */
-    text-align: center; /* Centraliza o texto quando empilhado */
+/* ----- RESPONSIVIDADE ----- */
+@media (max-width: 768px) {
+  header nav {
+    justify-content: flex-end;
+  }
+  .menu-toggle {
+    display: block;
+  }
+  .menu {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: var(--accent);
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transform: translateY(-100%);
+    transition: transform 0.3s ease-in-out;
+    justify-content: flex-start;
+  }
+  .menu.active {
+    display: flex;
+    transform: translateY(0);
+  }
+  .menu li {
+    width: 100%;
+    text-align: center;
+    margin: 10px 0;
+  }
+  .menu a {
+    width: 100%;
   }
 
-  .consultoria-imagem img {
-    max-width: 200px; /* Ajusta o tamanho da imagem */
-    margin-bottom: 20px; /* Adiciona um espaço abaixo da imagem */
+  .intro-box {
+    padding: 20px;
+  }
+  
+  .intro-box h1 {
+    font-size: 1.8rem;
+  }
+  
+  .intro-box p {
+    font-size: 14px;
   }
 
-  .consultoria-texto {
-    max-width: 100%; /* Permite que o texto ocupe toda a largura disponível */
+  .bio-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: justify;
+    margin: 20px auto;
   }
 
-  .consultoria-texto h1,
-  .consultoria-texto p,
-  .consultoria-texto h2 {
-    text-align: center; /* Centraliza todo o texto */
+  .bio-imagem img {
+    max-width: 200px;
   }
 
-  /* Ajustes para a seção centralizada também */
-  .consultoria-content-centralizado {
-      max-width: 100%;
-  }
-  .texto-centralizado ul li {
-      justify-content: center;
+  .social-icons a {
+    width: 36px;
+    height: 36px;
+    font-size: 18px;
   }
 }
 
 @media (max-width: 480px) {
-  .consultoria-projetos-culturais {
-    padding: 40px 15px; /* Reduz o padding em telas muito pequenas */
+  .bio-texto {
+    font-size: 14px;
   }
-
-  .consultoria-imagem img {
-    max-width: 150px; /* Diminui ainda mais a imagem */
-  }
-
-  .consultoria-texto h1 {
-    font-size: 26px; /* Ajusta o título */
-  }
-
-  .consultoria-texto h2 {
-    font-size: 16px; /* Ajusta o subtítulo */
-  }
-
-  .consultoria-texto p {
-    font-size: 14px; /* Ajusta o texto geral */
-  }
-
-  .titulo-centralizado {
-    font-size: 28px;
-  }
-
-  .imagem-centralizada img {
-    max-width: 150px;
-  }
-
-  .texto-centralizado p,
-  .texto-centralizado h2 {
-    font-size: 15px;
-  }
-
-  .texto-centralizado ul li {
-      font-size: 14px;
+  footer {
+    padding: 30px 12px;
   }
 }
 
-/* Estilo para a imagem da página inicial */
-.portfolio img {
-    max-width: 100%; /* Garante que a imagem não ultrapasse a largura do seu contêiner */
-    height: auto; /* Mantém a proporção original da imagem */
-    display: block; /* Remove o espaço extra abaixo da imagem */
-    margin: 0 auto; /* Centraliza a imagem horizontalmente */
-}
-
-/* Centraliza o contêiner da imagem na seção portfolio */
-.portfolio {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-}
-
-/* --- NOVA SEÇÃO HOME --- */
-.home-intro {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 40px 20px;
-    text-align: center;
-    min-height: calc(100vh - 120px); /* Ajusta a altura para telas maiores, considerando header e footer */
-}
-
-.intro-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 30px;
-    max-width: 800px;
-    width: 100%;
-}
-
-.portfolio-cover {
-    max-width: 100%;
-    height: auto;
-    border-radius: 8px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-}
-
-.intro-text h1 {
-    font-size: 2.5rem;
-    color: var(--accent);
-    margin-bottom: 1rem;
-}
-
-.intro-text p {
-    font-size: 1.1rem;
-    color: var(--gray);
-    line-height: 1.6;
-}
-
-.cta-button {
-    display: inline-block;
-    background-color: var(--accent);
-    color: var(--white);
-    padding: 12px 25px;
-    text-decoration: none;
-    font-weight: 700;
-    border-radius: 5px;
-    margin-top: 20px;
-    transition: background-color 0.3s ease;
-}
-
-.cta-button:hover {
-    background-color: #a91a1a;
-}
-
-/* Responsividade da nova seção home */
-@media (max-width: 768px) {
-    .intro-text h1 {
-        font-size: 2rem;
-    }
-    .intro-text p {
-        font-size: 1rem;
-    }
-}
-
-/* --- BOTÃO DE CHAMADA PARA AÇÃO (CTA) --- */
-.cta-consultoria {
-    text-align: center;
-    background-color: var(--accent);
-    color: var(--white);
-    padding: 60px 20px;
-    margin-top: 40px;
-}
-
-.cta-consultoria h2 {
-    color: var(--white);
-    font-size: 2rem;
-    margin-bottom: 10px;
-}
-
-.cta-consultoria p {
-    font-size: 1.1rem;
-    max-width: 600px;
-    margin: 0 auto 30px;
-}
-
-.cta-consultoria .cta-button {
-    background-color: var(--white);
-    color: var(--accent);
-    padding: 15px 35px;
-    font-size: 1rem;
-    text-transform: uppercase;
-    font-weight: bold;
-    border-radius: 5px;
-    text-decoration: none;
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.cta-consultoria .cta-button:hover {
-    background-color: #eee;
-    color: #a91a1a;
-}
-
-/* Responsividade do CTA */
-@media (max-width: 768px) {
-    .cta-consultoria h2 {
-        font-size: 1.5rem;
-    }
-    .cta-consultoria p {
-        font-size: 1rem;
-    }
-}
-
-/* --- SEÇÃO DE DEPOIMENTOS --- */
+/* --- SEÇÃO DEPOIMENTOS --- */
 .depoimentos-section {
-    padding: 60px 20px;
-    text-align: center;
-    background-color: var(--bg); /* Usa o fundo padrão leve */
+  padding: 40px 20px;
+  text-align: center;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-.depoimentos-section h2 {
-    font-size: 2.2rem;
-    color: var(--text);
-    margin-bottom: 40px;
+.depoimentos-content-wrapper {
+  padding: 40px;
+}
+
+.depoimentos-section .section-title {
+  font-size: 2.2rem;
+  color: var(--text);
+  margin-bottom: 40px;
 }
 
 .depoimentos-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    max-width: 1100px;
-    margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  justify-content: center;
+  align-items: stretch;
+  margin: 0 auto;
 }
 
 .depoimento-card {
-    background-color: var(--white);
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-    text-align: left;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-color: var(--bg);
+  border-radius: 12px;
+  padding: 25px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: left;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .depoimento-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
 }
 
 .depoimento-card p {
-    font-size: 1rem;
-    color: var(--gray);
-    line-height: 1.7;
-    margin-bottom: 15px;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--gray);
+  margin-bottom: 15px;
 }
 
 .depoimento-card .cliente-info {
-    font-weight: bold;
-    color: var(--text);
-    text-align: right;
-    margin-top: auto; /* Alinha ao final do card */
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: var(--accent);
+  margin-top: auto;
 }
 
-/* Responsividade da seção de depoimentos */
+/* Responsividade para Depoimentos */
 @media (max-width: 768px) {
-    .depoimentos-section h2 {
-        font-size: 1.8rem;
-    }
-    .depoimento-card {
-        padding: 25px;
-    }
-    .depoimento-card p {
-        font-size: 0.95rem;
-    }
+  .depoimentos-section .section-title {
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+  }
+  .depoimento-card {
+    padding: 20px;
+  }
 }
 
-/* --- SEÇÃO DE CONTATO --- */
+@media (max-width: 480px) {
+  .depoimento-card p {
+    font-size: 0.9rem;
+  }
+}
+
+/* ---------- PÁGINA DE CONTATO ---------- */
 .contato-page {
-    padding: 40px 20px;
-    text-align: center;
-    flex: 1; /* Ocupa o espaço disponível */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
 }
 
 .contato-section {
-    max-width: 700px;
-    margin: 0 auto;
-    background-color: var(--white);
-    padding: 40px;
-    border-radius: 8px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  padding: 20px;
+}
+
+.contato-wrapper {
+  flex: 1 1 500px;
+  max-width: 550px;
+}
+
+.contato-header {
+  text-align: center;
+  margin-bottom: 30px;
 }
 
 .contato-header h1 {
-    font-size: 2.5rem;
-    color: var(--accent);
-    margin-bottom: 1rem;
+  font-size: 2.5rem;
+  color: var(--accent);
+  margin-bottom: 15px;
 }
 
 .contato-header p {
-    font-size: 1.1rem;
-    color: var(--gray);
-    line-height: 1.7;
-    margin-bottom: 30px;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--gray);
+}
+
+#contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
 .form-group {
-    margin-bottom: 20px;
-    text-align: left;
+  display: flex;
+  flex-direction: column;
 }
 
 .form-group label {
-    display: block;
-    margin-bottom: 8px;
-    font-weight: bold;
-    color: var(--text);
+  font-weight: bold;
+  margin-bottom: 8px;
+  color: var(--text);
+  font-size: 1rem;
 }
 
 .form-group input[type="text"],
 .form-group input[type="email"],
 .form-group textarea {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 1rem;
-    box-sizing: border-box; /* Garante que o padding não aumente a largura total */
+  padding: 12px 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 15px;
+  font-family: 'Lato', sans-serif;
+  color: var(--gray);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  width: 100%;
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="email"]:focus,
+.form-group textarea:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(201, 25, 25, 0.2);
+  outline: none;
 }
 
 .form-group textarea {
-    resize: vertical; /* Permite redimensionar apenas verticalmente */
+  resize: vertical;
 }
 
-/* Reutilizando o estilo do CTA button */
-.contato-section .cta-button {
-    width: 100%; /* Faz o botão ocupar toda a largura */
-    padding: 15px 25px;
-    font-size: 1.1rem;
-    margin-top: 10px;
+.cta-button {
+  margin-top: 10px;
 }
 
-/* Responsividade da seção de contato */
-@media (max-width: 768px) {
-    .contato-section {
-        padding: 30px 20px;
-    }
-    .contato-header h1 {
-        font-size: 2rem;
-    }
-    .contato-header p {
-        font-size: 1rem;
-    }
+.contato-info-section {
+  flex: 1 1 350px;
+  max-width: 350px;
+  text-align: center;
 }
 
-/* --- NOVA SEÇÃO DE VÍDEOS --- */
-.video-section {
-    padding: 20px;
-    margin-top: 40px;
-    text-align: center;
+.contato-info-section h3 {
+  font-size: 1.8rem;
+  color: var(--accent);
+  margin-bottom: 20px;
 }
 
-.video-grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 30px;
+.contato-info-section p {
+  font-size: 1rem;
+  margin-bottom: 15px;
+  color: var(--gray);
+  line-height: 1.7;
 }
 
-.video-item {
-    background-color: var(--light-gray);
-    border-radius: 8px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    width: 100%;
+.contato-info-section a {
+  color: var(--accent);
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.contato-info-section a:hover {
+  text-decoration: underline;
+}
+
+.contato-info-section .social-icons {
+  margin-top: 25px;
+  justify-content: center;
+}
+
+/* Responsividade para a página de contato */
+@media (max-width: 992px) {
+  .contato-section {
+    flex-direction: column;
+    align-items: center;
+  }
+  .contato-wrapper,
+  .contato-info-section {
     max-width: 500px;
-    text-align: left;
+    flex-basis: auto;
+  }
+  .contato-header {
+    margin-bottom: 20px;
+  }
 }
 
-.video-container {
-    position: relative;
-    width: 100%;
-    padding-bottom: 56.25%; /* Proporção de aspecto 16:9 (altura/largura) */
-    height: 0;
-    overflow: hidden;
-}
-
-.video-container iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-}
-
-.video-info {
-    padding: 20px;
-}
-
-.video-info h3 {
-    font-size: 1.5rem;
-    margin-bottom: 10px;
-    color: var(--primary);
-}
-
-.video-info p {
-    font-size: 1rem;
-    color: var(--gray);
-    line-height: 1.5;
-}
-
-/* Responsividade para telas menores */
 @media (max-width: 768px) {
-    .video-grid {
-        flex-direction: column;
-        align-items: center;
-    }
-}
-
-/* Ajuste para telas menores */
-@media (max-width: 600px) {
-  .menu ul,
-  header nav ul {
-    flex-direction: column;   /* empilha os links */
-    gap: 12px;                /* reduz espaço entre itens */
-    align-items: center;      /* centraliza os itens */
+  .contato-header h1 {
+    font-size: 2rem;
   }
-
-  .menu a,
-  header nav a {
-    font-size: 16px;          /* aumenta a legibilidade no celular */
-    padding: 10px;
+  .contato-info-section h3 {
+    font-size: 1.5rem;
+  }
+  .form-group input[type="text"],
+  .form-group input[type="email"],
+  .form-group textarea {
+    padding: 10px 12px;
   }
 }
 
+/* ---------- PÁGINA BIOGRAFIA ---------- */
+.biografia-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 20px;
+}
 
+.bio-main-section {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 20px auto 40px;
+  padding: 20px;
+  box-sizing: border-box;
+  justify-content: center;
+}
 
+/* Ajustes para a imagem da biografia */
+.bio-imagem {
+  /* Remove o flex-basis para que o tamanho seja mais flexível */
+  flex-grow: 0;
+  flex-shrink: 0;
+  text-align: center;
+  
+  /* Adiciona um padding e bordas para criar o efeito de caixa */
+  padding: 12px; /* Adiciona espaçamento interno para evitar que a imagem seja cortada */
+  background-color: var(--white);
+  border-radius: 12px; /* Borda arredondada na caixa, não na imagem */
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+}
 
+.bio-imagem img {
+  width: 100%; /* Garante que a imagem preencha 100% da caixa */
+  max-width: 250px;
+  height: auto;
+  border-radius: 8px; /* Adicione uma pequena borda arredondada na imagem, se desejar */
+  display: block;
+  /* Remove a sombra da imagem, pois ela agora está no contêiner */
+  box-shadow: none;
+}
 
+.bio-content-wrapper {
+  flex: 1;
+  min-width: 300px;
+}
 
+.bio-header-box {
+  text-align: center;
+  margin-bottom: 30px;
+  padding: 20px;
+}
+
+.bio-header-box h1 {
+  font-size: 2.5rem;
+  color: var(--accent);
+  margin-bottom: 0;
+}
+
+.bio-secao {
+  margin-bottom: 30px;
+}
+
+.bio-secao .intro-box {
+  padding: 30px;
+  text-align: left;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+}
+
+.bio-secao .intro-box:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+}
+
+.bio-secao h2 {
+  font-size: 1.8rem;
+  color: var(--accent);
+  margin-bottom: 15px;
+  border-bottom: 2px dotted var(--accent);
+  display: inline-block;
+  padding-bottom: 5px;
+}
+
+.bio-secao p {
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--gray);
+  text-align: justify;
+}
+
+/* ---------- RESPONSIVIDADE BIOGRAFIA ---------- */
+@media (max-width: 992px) {
+  .bio-main-section {
+    flex-direction: column;
+    align-items: center;
+  }
+  .bio-imagem {
+    padding: 10px; /* Ajuste o padding em telas menores */
+  }
+  .bio-imagem img {
+    max-width: 200px;
+  }
+  .bio-content-wrapper {
+    text-align: center;
+  }
+  .bio-secao .intro-box {
+    text-align: center;
+  }
+  .bio-secao h2 {
+    text-align: center;
+    display: block;
+    border-bottom: none;
+    margin-bottom: 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  .bio-header-box h1 {
+    font-size: 2rem;
+  }
+  .bio-secao h2 {
+    font-size: 1.5rem;
+  }
+}
