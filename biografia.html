@@ -12,25 +12,31 @@
   <header>
     <nav>
       <ul class="menu">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="biografia.html" class="active">Biografia</a></li>
-        <li><a href="trabalhos.html">Trabalhos</a></li>
-        <li><a href="consultorias.html">Consultorias</a></li>
-        <li><a href="contato.html">Contato</a></li>
+        <li><a href="index.html">HOME</a></li>
+        <li><a href="biografia.html" class="active">BIOGRAFIA</a></li>
+        <li><a href="trabalhos.html">TRABALHOS</a></li>
+        <li><a href="consultorias.html">CONSULTORIAS</a></li>
+        <li><a href="contato.html">CONTATO</a></li>
       </ul>
+      <button class="menu-toggle" aria-label="Menu">
+        <i class="fas fa-bars"></i>
+      </button>
     </nav>
   </header>
 
-  <main class="biografia">
-    <section class="bio-container">
+  <main class="biografia-page">
+    <section class="bio-main-section">
       <div class="bio-imagem">
         <img src="images/matheus-xavier.png" alt="Matheus Xavier - Retrato">
       </div>
 
-      <div class="bio-texto">
-        <h1>Biografia</h1>
+      <div class="bio-content-wrapper">
+        <div class="intro-box bio-header-box">
+            <h1>Biografia</h1>
+        </div>
 
         <section class="bio-secao">
+          <div class="intro-box">
             <h2>Formação e Atuação Profissional</h2>
             <p>
               Licenciado em Teatro pela Universidade Estadual do Sudoeste da Bahia (UESB),
@@ -40,21 +46,25 @@
               e recentemente atuei como consultor técnico na execução da Lei Paulo Gustavo
               nos municípios de Jaguaquara-BA e Ubaíra-BA.
             </p>
+          </div>
         </section>
 
         <section class="bio-secao">
+          <div class="intro-box">
             <h2>Prêmios e Reconhecimentos</h2>
             <p>
               Minha trajetória no universo da cena soma mais de 20 espetáculos em diversas funções,
               atuando na direção, produção e criação. Fui premiado com a melhor direção no
               Festival de Teatro Universitário do Rio de Janeiro (FESTU RIO) em 2014, e participei de
-              dois espetáculos vencedores do Prêmio Braskem de Teatro (2014 e 2018), na categoria
-              "Espetáculo do Interior". Em 2014, o espetáculo "Algavias – Omarujeirodalua"
+              dois espetáculos vencedores do Prêmio Braskem de Teatro (2014 e 2018), na
+              categoria "Espetáculo do Interior". Em 2014, o espetáculo "Algavias – Omarujeirodalua"
               foi apresentado no FIAC-BA (Festival Internacional de Artes Cênicas da Bahia).
             </p>
+          </div>
         </section>
 
         <section class="bio-secao">
+          <div class="intro-box">
             <h2>Pesquisa e Projetos Culturais</h2>
             <p>
               Em minha monografia, "Sistema de Jogos Performativos e sua Aplicabilidade Político/Pedagógica:
@@ -65,36 +75,43 @@
               sobre o Contexto e História da Literatura de Cordel", financiado pela Lei Paulo Gustavo através da Prefeitura
               Municipal de Jequié-BA.
             </p>
+          </div>
         </section>
-
       </div>
     </section>
   </main>
 
   <footer>
-  <div class="footer-container">
-    <div class="footer-col">
-      <h3>Contato</h3>
-      <p>Email: tuzzadesigner@gmail.com</p>
-      <p>Tel: (73) 98829-4140</p>
-      <p>Jequié - BA</p>
-    </div>
-
-    <div class="footer-col">
-      <h3>Conecte-se</h3>
-      <div class="social-icons">
-        <a href="https://www.instagram.com/matheusxavier001/" target="_blank" rel="noopener" aria-label="Instagram">
-          <i class="fab fa-instagram"></i>
-        </a>
-        <a href="https://www.facebook.com/profile.php?id=100005953217330" target="_blank" rel="noopener" aria-label="Facebook">
-          <i class="fab fa-facebook-f"></i>
-        </a>
-        <a href="https://www.linkedin.com/in/matheus-xavier-81b00b21b/" target="_blank" rel="noopener" aria-label="LinkedIn">
-          <i class="fab fa-linkedin-in"></i>
-        </a>
+    <div class="footer-container">
+      <div class="footer-col">
+        <h3>Contato</h3>
+        <p>Email: tuzzadesigner@gmail.com</p>
+        <p>Tel: (73) 98829-4140</p>
+        <p>Jequié - BA</p>
+      </div>
+      <div class="footer-col">
+        <h3>Conecte-se</h3>
+        <div class="social-icons">
+          <a href="https://www.instagram.com/matheusxavier001/" target="_blank" rel="noopener" aria-label="Instagram">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="https://www.facebook.com/profile.php?id=100005953217330" target="_blank" rel="noopener" aria-label="Facebook">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/matheus-xavier-81b00b21b/" target="_blank" rel="noopener" aria-label="LinkedIn">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+        </div>
       </div>
     </div>
-  </div>
-</footer>
+  </footer>
+  <script>
+  const menuToggle = document.querySelector('.menu-toggle');
+  const menu = document.querySelector('.menu');
+
+  menuToggle.addEventListener('click', () => {
+    menu.classList.toggle('active');
+  });
+  </script>
 </body>
 </html>
