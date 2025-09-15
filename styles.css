@@ -311,7 +311,7 @@ footer {
 
 .page-title {
     font-size: 2.5rem;
-    color: var(--accent);
+    color: var(rgba(255, 0, 0, 0.658));
     margin-bottom: 40px;
 }
 
@@ -327,7 +327,7 @@ footer {
 .work-card {
     background-color: var(--white);
     border-radius: 8px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 15px rgba(156, 3, 3, 0.747);
     overflow: hidden;
     display: flex;
     flex-direction: column;
@@ -1046,5 +1046,466 @@ footer {
   }
   .bio-secao h2 {
     font-size: 1.5rem;
+  }
+}
+
+/* ---------- ESTILOS ESPECÍFICOS PARA A PÁGINA DE TRABALHOS (Novas adições) ---------- */
+
+/* Estilos gerais para as seções de trabalhos */
+.trabalhos-section {
+    padding: 40px 20px; /* Aumentado o padding para melhor espaçamento */
+    text-align: center;
+    margin-bottom: 40px; /* Espaçamento entre seções */
+}
+
+.trabalhos-section:last-child {
+    margin-bottom: 0; /* Remover margem do último item */
+}
+
+.page-title {
+    font-size: 2.5rem;
+    color: var(--accent);
+    margin-bottom: 40px;
+    font-family: 'Montserrat', sans-serif; /* Mantendo a fonte do título */
+}
+
+/* --- Layout para Artes Cênicas (Similar ao atual, mas dentro de uma seção específica) --- */
+.artes-cenicas .works-grid-cenicas {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    padding: 0 20px;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+.artes-cenicas .work-card {
+    background-color: var(--white);
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    transition: transform 0.3s ease;
+}
+
+.artes-cenicas .work-card:hover {
+    transform: translateY(-5px);
+}
+
+.artes-cenicas .work-card img {
+    width: 100%;
+    height: 200px; /* Altura fixa para as imagens de capa */
+    object-fit: cover; /* Garante que a imagem cubra a área sem distorcer */
+}
+
+.artes-cenicas .work-info {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.artes-cenicas .work-info h3 {
+    font-size: 1.2rem;
+    color: var(--accent); /* Usando a cor de acento para títulos de trabalho */
+    margin-bottom: 5px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.artes-cenicas .work-info p {
+    font-size: 0.9rem;
+    color: var(--gray);
+    line-height: 1.4;
+    margin-top: auto; /* Empurra o parágrafo para baixo */
+}
+
+/* --- Layout para Audiovisual --- */
+.audiovisual .video-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.audiovisual .video-item {
+    background-color: var(--white);
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 100%;
+    max-width: 560px; /* Largura aproximada de um vídeo embedado */
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+}
+
+.audiovisual .video-container {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* Proporção 16:9 */
+    height: 0;
+    overflow: hidden;
+}
+
+.audiovisual .video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.audiovisual .video-info {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* Permite que o info ocupe o espaço restante */
+}
+
+.audiovisual .video-info h3 {
+    font-size: 1.5rem;
+    color: var(--accent);
+    margin-bottom: 10px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.audiovisual .video-info p {
+    font-size: 1rem;
+    color: var(--gray);
+    line-height: 1.6;
+}
+
+/* --- Layout para Desenvolvimento Web --- */
+.desenvolvimento-web .works-grid-web {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /* Cards um pouco maiores */
+    gap: 10px;
+    padding: 0px 40px;
+    margin: 0px auto;
+    max-width: 2000px;
+    height: 650px;
+}
+
+.desenvolvimento-web .work-card {
+    background-color: var(--white);
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    display: center;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    transition: transform 0.3s ease;
+}
+
+.desenvolvimento-web .work-card:hover {
+    transform: translateY(-5px);
+}
+
+.desenvolvimento-web .work-card img {
+    margin: 20px;
+    width: 100%;
+    height: 500px; /* Altura um pouco maior para imagens de projetos web */
+    
+}
+
+.desenvolvimento-web .work-info {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.desenvolvimento-web .work-info h3 {
+    font-size: 1.3rem;
+    color: var(--accent);
+    margin-bottom: 5px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.desenvolvimento-web .work-info p {
+    font-size: 1rem;
+    color: var(--gray);
+    line-height: 1.5;
+    margin-top: auto;
+}
+
+
+/* Responsividade específica para a página de trabalhos */
+@media (max-width: 768px) {
+    .page-title {
+        font-size: 2rem;
+    }
+
+    /* Ajustes para o grid de artes cênicas e web */
+    .artes-cenicas .works-grid-cenicas,
+    .desenvolvimento-web .works-grid-web {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
+
+    /* Ajustes para os vídeos */
+    .audiovisual .video-item {
+        max-width: 100%; /* Ocupa toda a largura em telas menores */
+    }
+
+    .audiovisual .video-container {
+        padding-bottom: 56.25%; /* Mantém a proporção */
+    }
+}
+
+@media (max-width: 480px) {
+    .page-title {
+        font-size: 1.8rem;
+    }
+    .trabalhos-section {
+        padding: 20px 10px;
+    }
+    .artes-cenicas .work-info,
+    .audiovisual .video-info,
+    .desenvolvimento-web .work-info {
+        padding: 15px;
+    }
+    .artes-cenicas .work-info h3,
+    .audiovisual .video-info h3,
+    .desenvolvimento-web .work-info h3 {
+        font-size: 1.1rem;
+    }
+    .artes-cenicas .work-info p,
+    .audiovisual .video-info p,
+    .desenvolvimento-web .work-info p {
+        font-size: 0.9rem;
+    }
+}
+
+/* ---------- ESTILOS ESPECÍFICOS PARA O CARROSSEL DE TRABALHOS ---------- */
+
+.carousel-container {
+  position: relative; /* Necessário para posicionar os botões */
+  max-width: 800px; /* Largura máxima do carrossel */
+  margin: 40px auto; /* Centraliza o carrossel */
+  overflow: hidden; /* Esconde os itens que estão fora da área visível */
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+  border-radius: 12px; /* Bordas arredondadas */
+  background-color: var(--white); /* Fundo branco para o contêiner */
+}
+
+.carousel-track {
+  display: flex; /* Para alinhar os itens em uma linha */
+  transition: transform 0.5s ease-in-out; /* Animação suave para a troca de slides */
+}
+
+.carousel-item {
+  flex: 0 0 100%; /* Cada item ocupa 100% da largura do contêiner */
+  box-sizing: border-box; /* Inclui padding e border na largura total */
+  display: block; /* Esconde todos os itens por padrão, exceto o ativo */
+}
+
+.carousel-item.active {
+  display: block; /* Mostra apenas o item ativo */
+}
+
+.carousel-item .work-card {
+  margin: 0; /* Remove margens do card interno, pois o carrossel tem seu próprio padding/margem */
+  box-shadow: none; /* Remove a sombra individual dos cards dentro do carrossel */
+  border-radius: 0; /* Remove bordas arredondadas dos cards internos */
+  height: 100%; /* Garante que o card ocupe toda a altura do item */
+  align-items: center;
+}
+
+.carousel-item .work-card img {
+  width: 50%;
+  height: 400px; /* Altura fixa para a imagem no carrossel */
+  object-fit: cover; /* Garante que a imagem cubra a área sem distorcer */
+  border-radius: 12px 12px 0 0; /* Arredonda apenas o topo da imagem */
+  align-items: center;
+}
+
+.carousel-item .work-info {
+  padding: 30px; /* Mais padding para os detalhes do trabalho dentro do carrossel */
+  text-align: center; /* Centraliza o texto para melhor visualização */
+}
+
+.carousel-item .work-info h3 {
+  font-size: 2rem; /* Título maior dentro do carrossel */
+  color: var(--accent);
+  margin-bottom: 15px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.carousel-item .work-info p {
+  font-size: 1.1rem; /* Texto um pouco maior */
+  color: var(--gray);
+  line-height: 1.6;
+}
+
+/* Estilos para os botões de controle do carrossel */
+.carousel-control {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(196, 14, 14, 0.603); /* Fundo semi-transparente */
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  font-size: 24px;
+  cursor: pointer;
+  z-index: 10; /* Garante que os botões fiquem sobre os slides */
+  border-radius: 50%; /* Forma redonda para os botões */
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.3s ease;
+}
+
+.carousel-control:hover {
+  background-color: rgba(0, 0, 0, 0.8); /* Fundo mais escuro no hover */
+}
+
+.carousel-control.prev {
+  left: 20px; /* Posição do botão anterior */
+}
+
+.carousel-control.next {
+  right: 20px; /* Posição do botão próximo */
+}
+
+/* Responsividade para o Carrossel */
+@media (max-width: 768px) {
+  .carousel-container {
+    max-width: 95%; /* Ocupa quase toda a largura em telas menores */
+    margin: 20px auto;
+  }
+
+  .carousel-item .work-card img {
+    height: 300px; /* Imagem menor em telas médias */
+  }
+
+  .carousel-item .work-info h3 {
+    font-size: 1.6rem;
+  }
+
+  .carousel-item .work-info p {
+    font-size: 1rem;
+  }
+
+  .carousel-control {
+    padding: 8px 12px;
+    font-size: 20px;
+    width: 40px;
+    height: 40px;
+  }
+
+  .carousel-control.prev {
+    left: 10px;
+  }
+
+  .carousel-control.next {
+    right: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .carousel-item .work-card img {
+    height: 250px; /* Imagem ainda menor em telas pequenas */
+  }
+
+  .carousel-item .work-info {
+    padding: 20px;
+  }
+
+  .carousel-item .work-info h3 {
+    font-size: 1.4rem;
+  }
+
+  .carousel-item .work-info p {
+    font-size: 0.9rem;
+  }
+}
+
+/* Seção de Vídeos (Manter ou adaptar, dependendo se você quer um carrossel para eles também) */
+.video-section {
+    padding: 40px 20px;
+    margin-top: 40px;
+    text-align: center;
+    background-color: var(--bg); /* Fundo para diferenciar da seção do carrossel */
+}
+
+.video-section h1 {
+    font-size: 2.2rem;
+    color: var(--text);
+    margin-bottom: 40px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.video-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.video-item {
+    background-color: var(--white);
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 100%;
+    max-width: 500px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+}
+
+.video-container {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.video-info {
+    padding: 20px;
+    flex-grow: 1; /* Garante que o info ocupe espaço se necessário */
+}
+
+.video-info h3 {
+    font-size: 1.5rem;
+    color: var(--accent);
+    margin-bottom: 10px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.video-info p {
+    font-size: 1rem;
+    color: var(--gray);
+    line-height: 1.6;
+}
+
+/* Responsividade para a seção de Vídeos */
+@media (max-width: 768px) {
+  .video-section h1 {
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+  }
+  .video-item {
+    max-width: 100%;
   }
 }
